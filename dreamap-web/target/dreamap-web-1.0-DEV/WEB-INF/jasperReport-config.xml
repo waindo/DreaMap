@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+
+
+    <bean id="pdfReport"
+          class="org.springframework.web.servlet.view.jasperreports.JasperReportsPdfView">
+        <property name="reportDataKey" value="dataSource"/>
+        <property name="url" value="/WEB-INF/reports/jasper/ReportTest.jasper"/>
+    </bean>
+
+    <bean id="xlsReport"
+          class="org.springframework.web.servlet.view.jasperreports.JasperReportsXlsView">
+        <property name="reportDataKey" value="dataSource"/>
+    </bean>
+
+    <bean id="htmlReport"
+          class="org.springframework.web.servlet.view.jasperreports.JasperReportsHtmlView">
+        <property name="reportDataKey" value="dataSource"/>
+    </bean>
+
+    <bean id="csvReport"
+          class="org.springframework.web.servlet.view.jasperreports.JasperReportsCsvView">
+        <property name="reportDataKey" value="dataSource"/>
+    </bean>
+</beans>

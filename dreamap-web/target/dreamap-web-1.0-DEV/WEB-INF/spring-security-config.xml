@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+       xmlns:beans="http://www.springframework.org/schema/beans"
+       xmlns:sec="http://www.springframework.org/schema/security"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                     http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.2.xsd
+                     http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+       <sec:global-method-security pre-post-annotations="enabled">
+       </sec:global-method-security>
+
+       <sec:http auto-config="false" access-denied-page="/403"
+                 entry-point-ref="authenticationEntryPoint">
+
+              <sec:intercept-url pattern="/resources**" access="ROLE_USER,ROLE_ADMIN" />
+                <sec:intercept-url pattern="/app**" access="ROLE_USER,ROLE_ADMIN" />
+                <sec:intercept-url pattern="/home" access="ROLE_USER,ROLE_ADMIN" />
+              <sec:intercept-url pattern="/login" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+
+              <sec:logout logout-url="/j_spring_logout" logout-success-url="/login"
+                          invalidate-session="true"/>
+
+              <sec:custom-filter ref="authenticationFilter" position="FORM_LOGIN_FILTER"/>
+
+       </sec:http>
+
+       <!-- Custom filter for username and password. The real customization is done in the customAthenticationManager -->
+       <beans:bean id="authenticationFilter" class="org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter"
+                   p:authenticationManager-ref="customAuthenticationManager"
+                   p:authenticationFailureHandler-ref="customAuthenticationFailureHandler"
+                   p:authenticationSuccessHandler-ref="customAuthenticationSuccessHandler" />
+
+       <!-- Custom authentication manager. In order to authenticate, username and password must not be the same -->
+       <beans:bean id="customAuthenticationManager" class="id.net.iconpln.dreamap.api.authentication.CustomAuthenticationManager" scope="session">
+              <aop:scoped-proxy proxy-target-class="true"/>
+       </beans:bean>
+
+       <!-- We just actually need to set the default failure url here -->
+       <beans:bean id="customAuthenticationFailureHandler" class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler"
+                   p:defaultFailureUrl="/login?error=1" />
+
+       <!-- We just actually need to set the default target url here -->
+       <beans:bean id="customAuthenticationSuccessHandler" class="org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler"
+                   p:defaultTargetUrl="/home" />
+
+       <!-- The AuthenticationEntryPoint is responsible for redirecting the user to a particular page, like a login page,
+               whenever the server sends back a response requiring authentication -->
+       <!-- See Spring-Security Reference 5.4.1 for more info -->
+       <beans:bean id="authenticationEntryPoint" class="org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint"
+                   p:loginFormUrl="/login" />
+
+       <!-- The tag below has no use but Spring Security needs it to autowire the parent property of
+               org.springframework.security.authentication.ProviderManager. Otherwise we get an error
+               A probable bug. This is still under investigation-->
+       <sec:authentication-manager />
+
+       <!-- Automatically receives AuthenticationEvent messages -->
+       <!--	<beans:bean id="loggerListener" class="org.springframework.security.access.event.LoggerListener" />-->
+
+</beans:beans>

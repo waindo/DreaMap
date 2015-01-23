@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
+
+
+    <context:component-scan base-package="id.net.iconpln.dreamap.web.controller"/>
+    <context:component-scan base-package="id.net.iconpln.dreamap.report.controller"/>
+    <context:component-scan base-package="id.net.iconpln.dreamap.api.controller"/>
+
+    <mvc:annotation-driven/>
+    <mvc:default-servlet-handler/>
+
+    <!-- <bean id="TempConverterService" class="org.springframework.remoting.jaxws.JaxWsPortProxyFactoryBean">
+        <property name="wsdlDocumentUrl" value="http://www.w3schools.com/webservices/tempconvert.asmx?WSDL"/>
+        <property name="namespaceUri" value="http://tempuri.org/"/>
+        <property name="serviceName" value="TempConvert"/>
+        <property name="portName" value="TempConvertSoap"/>
+        <property name="serviceInterface" value="id.net.iconpln.apkt.ws.service.TempConvertService"/>
+    </bean>-->
+
+    <!--
+
+    <bean id="wsIntegCRMService" class="org.springframework.remoting.jaxws.JaxWsPortProxyFactoryBean">
+        <property name="wsdlDocumentUrl" value="http://10.68.35.17:8080/wsIntegCRM_AP2T/wsIntegCRM.asmx?wsdl"/>
+        <property name="namespaceUri" value="http://tempuri.org/"/>
+        <property name="serviceName" value="wsIntegCRM"/>
+        <property name="portName" value="wsIntegCRMSoap"/>
+        <property name="endpointAddress"  value="http://10.68.35.17:8080/wsIntegCRM_AP2T/wsIntegCRM.asmx"/>
+        <property name="serviceInterface" value="id.net.iconpln.apkt.ws.service.WsIntegCRMService"/>
+    </bean>
+
+    -->
+
+    <!--<bean id="wsInfoService" class="org.springframework.remoting.jaxws.JaxWsPortProxyFactoryBean">-->
+        <!--<property name="wsdlDocumentUrl" value="http://10.68.35.11:7075/wsintegapkt/WsInfoService?WSDL"/>-->
+        <!--<property name="namespaceUri" value="http://ws.iconpln.co.id/"/>-->
+        <!--<property name="serviceName" value="WsInfoService"/>-->
+        <!--<property name="portName" value="WsInfoPort"/>-->
+        <!--<property name="serviceInterface" value="id.net.iconpln.apkt.ws.service.WsInfoService"/>-->
+    <!--</bean>-->
+
+<!--
+    &lt;!&ndash; ap2t crm produktion Testing OSB&ndash;&gt;
+    <bean id="wsInfoService" class="org.springframework.remoting.jaxws.JaxWsPortProxyFactoryBean">
+        <property name="wsdlDocumentUrl" value="http://10.68.35.11:7079/icon/CRM_AP2T/Proxy_Services/crm_ap2t?wsdl"/>
+        <property name="namespaceUri" value="http://ws.iconpln.co.id/"/>
+        <property name="serviceName" value="WsInfoService"/>
+        <property name="portName" value="WsInfoPort"/>
+        <property name="endpointAddress"  value="http://10.68.35.11:7079/icon/CRM_AP2T/Proxy_Services/crm_ap2t"/>
+        <property name="serviceInterface" value="id.net.iconpln.apkt.ws.service.WsInfoService"/>
+    </bean>
+
+    -->
+
+            <!--produktion-->
+    <!--<bean id="wsApkt" class="org.springframework.remoting.jaxws.JaxWsPortProxyFactoryBean">-->
+        <!--<property name="wsdlDocumentUrl" value="http://10.14.152.94/webservice/ws_apkt.asmx?wsdl"/>-->
+        <!--<property name="namespaceUri" value="http://tempuri.org/"/>-->
+        <!--<property name="serviceName" value="ws_apkt"/>-->
+        <!--<property name="portName" value="ws_apktSoap"/>-->
+        <!--<property name="serviceInterface" value="id.net.iconpln.apkt.ws.service.WsApktService"/>-->
+    <!--</bean>-->
+
+                  <!--development-->
+    <!--<bean id="wsApkt" class="org.springframework.remoting.jaxws.JaxWsPortProxyFactoryBean">-->
+        <!--<property name="wsdlDocumentUrl" value="http://5.0.0.19:44444/webservice/ws_apkt.asmx?wsdl"/>-->
+        <!--<property name="namespaceUri" value="http://tempuri.org/"/>-->
+        <!--<property name="serviceName" value="ws_apkt"/>-->
+        <!--<property name="portName" value="ws_apktSoap"/>-->
+        <!--<property name="serviceInterface" value="id.net.iconpln.apkt.ws.service.WsApktService"/>-->
+    <!--</bean>-->
+
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- Maksimal Upload 10 MB -->
+        <property name="maxUploadSize" value="10000000"/>
+    </bean>
+
+    <mvc:resources mapping="/resources/**" location="/resources/"/>
+    <mvc:resources mapping="/app/**" location="/app/"/>
+    <mvc:resources mapping="/app*" location="/"/>
+
+
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+        <property name="order" value="1"/>
+    </bean>
+
+    <bean class="org.springframework.web.servlet.view.XmlViewResolver">
+        <property name="location" value="/WEB-INF/jasperReport-config.xml"/>
+        <property name="order" value="0"/>
+    </bean>
+
+
+
+</beans>
+
+
+        <!--
+  <bean class="org.springframework.web.servlet.view.UrlBasedViewResolver" id="tilesViewResolver" p:order="2">
+      <property name="viewClass" value="org.springframework.web.servlet.view.tiles2.TilesView"/>
+  </bean>
+  <bean class="org.springframework.web.servlet.view.tiles2.TilesConfigurer" id="tilesConfigurer">
+      <property name="definitions">
+          <list>
+              <value>/WEB-INF/layouts/layouts.xml</value>
+              <value>/WEB-INF/views/views.xml</value>
+              &lt;!&ndash; Scan views directory for Tiles configurations &ndash;&gt;
+              <value>/WEB-INF/views/**/views.xml</value>
+          </list>
+      </property>
+  </bean>-->

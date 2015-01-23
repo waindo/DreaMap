@@ -1,0 +1,60 @@
+<html>
+<head>
+<!-- <title>Dreamap ::PLN::</title> -->
+<title>PLN DrEamap</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- <link rel="stylesheet" type="text/css" href="resources/css/ext-all.css" /> -->
+<!-- <script type="text/javascript" src="resources/js/extjs/ext-all.js"></script> -->
+<script type="text/javascript" src="resources/js/extjs/examples/shared/include-ext.js?theme=classic"></script>
+    <link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.10/js/dojo/dojo/resources/dojo.css">
+    <link rel="stylesheet" type="text/css" href="//js.arcgis.com/3.10/js/esri/css/esri.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/main.css">
+<style>
+.edit-col {
+    background-image: url(resources/images/edit.png)
+}
+.view-col {
+    background-image: url(resources/images/lihat.png)
+}
+.approve {
+    background-image: url(resources/images/approve.png)
+}
+.reload {
+    background-image: url(resources/images/reload.png)
+}
+.upload-icon {
+    background-image: url(resources/images/image_add.png)
+}
+.upload-file {
+    background-image: url(resources/images/file.png)
+}
+.menu {
+    background-image: url(resources/images/menu.png)
+}
+.lock {
+    background-image: url(resources/images/lockout.png)
+}
+</style>
+<script type="text/javascript" src="//js.arcgis.com/3.10"></script>
+<script type="text/javascript" src="resources/app.js"></script>
+
+</head>
+<body>
+	<script>
+      dojo.require("esri.map");
+      dojo.require("esri.layers.FeatureLayer");
+      dojo.require("esri.dijit.PopupTemplate");
+      dojo.require("dojo.number");
+
+      function init() {
+      	  map = new esri.Map("map", {
+          basemap: "satellite", 
+          center: [-118.35, 34.45],
+          zoom: 10
+        });
+      }
+
+	  dojo.ready(init);
+</script>
+</body>
+</html>

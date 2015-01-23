@@ -1,0 +1,23 @@
+Ext.define('app.Application', {
+    name: 'app',
+
+    extend: 'Ext.app.Application',
+
+    autoCreateViewport: true,
+
+    views: [
+        'Viewport'// TODO: add views here''
+    ],
+
+    controllers: [
+        // TODO: add controllers here
+    ],
+
+    stores: [
+        // TODO: add stores here
+    ],
+
+    // launch: function() {
+    //     Ext.create('DREAMAP.view.Viewport');
+    // }
+});

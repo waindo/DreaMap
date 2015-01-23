@@ -1,0 +1,91 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="dreamap-web:war exploded">
+    <output-path>$PROJECT_DIR$/dreamap-web/target/dreamap-web-1.0-DEV</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="dreamap-web" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="archive" name="dreamap-repository-1.0-DEV.jar">
+            <element id="module-output" name="dreamap-repository" />
+          </element>
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.1.0" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.1.0" />
+          <element id="library" level="project" name="Maven: commons-dbcp:commons-dbcp:1.4" />
+          <element id="library" level="project" name="Maven: commons-pool:commons-pool:1.5.4" />
+          <element id="library" level="project" name="Maven: com.oracle:oracle:10.2.0.2.0" />
+          <element id="library" level="project" name="Maven: com.google.guava:guava:11.0.1" />
+          <element id="library" level="project" name="Maven: com.google.code.findbugs:jsr305:1.3.9" />
+          <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpclient:4.1.3" />
+          <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpcore:4.1.4" />
+          <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.4" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-lang3:3.1" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-core:3.2.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-expression:3.2.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-beans:3.2.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aop:3.2.0.RELEASE" />
+          <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context:3.2.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context-support:3.2.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-tx:3.2.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:3.2.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-web:3.2.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:3.2.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-webmvc-portlet:3.2.0.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-web:3.2.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-config:3.2.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.springframework.security:spring-security-core:3.2.3.RELEASE" />
+          <element id="library" level="project" name="Maven: org.codehaus.groovy:groovy:1.8.4" />
+          <element id="library" level="project" name="Maven: antlr:antlr:2.7.7" />
+          <element id="library" level="project" name="Maven: asm:asm:3.2" />
+          <element id="library" level="project" name="Maven: asm:asm-commons:3.2" />
+          <element id="library" level="project" name="Maven: asm:asm-util:3.2" />
+          <element id="library" level="project" name="Maven: asm:asm-analysis:3.2" />
+          <element id="library" level="project" name="Maven: asm:asm-tree:3.2" />
+          <element id="library" level="project" name="Maven: net.sf.jasperreports:jasperreports:5.0.1" />
+          <element id="library" level="project" name="Maven: commons-beanutils:commons-beanutils:1.8.0" />
+          <element id="library" level="project" name="Maven: commons-collections:commons-collections:2.1" />
+          <element id="library" level="project" name="Maven: commons-digester:commons-digester:2.1" />
+          <element id="library" level="project" name="Maven: com.lowagie:itext:2.1.7.js1" />
+          <element id="library" level="project" name="Maven: bouncycastle:bcmail-jdk14:138" />
+          <element id="library" level="project" name="Maven: bouncycastle:bcprov-jdk14:138" />
+          <element id="library" level="project" name="Maven: org.bouncycastle:bctsp-jdk14:1.38" />
+          <element id="library" level="project" name="Maven: org.bouncycastle:bcprov-jdk14:1.38" />
+          <element id="library" level="project" name="Maven: org.bouncycastle:bcmail-jdk14:1.38" />
+          <element id="library" level="project" name="Maven: jfree:jcommon:1.0.15" />
+          <element id="library" level="project" name="Maven: jfree:jfreechart:1.0.12" />
+          <element id="library" level="project" name="Maven: xml-apis:xml-apis:1.3.02" />
+          <element id="library" level="project" name="Maven: eclipse:jdtcore:3.1.0" />
+          <element id="library" level="project" name="Maven: org.codehaus.castor:castor:1.2" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.0.5" />
+          <element id="library" level="project" name="Maven: com.googlecode.json-simple:json-simple:1.1" />
+          <element id="library" level="project" name="Maven: commons-fileupload:commons-fileupload:1.2.2" />
+          <element id="library" level="project" name="Maven: commons-io:commons-io:2.1" />
+          <element id="library" level="project" name="Maven: org.apache.tiles:tiles-jsp:2.2.2" />
+          <element id="library" level="project" name="Maven: org.apache.tiles:tiles-servlet:2.2.2" />
+          <element id="library" level="project" name="Maven: org.apache.tiles:tiles-template:2.2.2" />
+          <element id="library" level="project" name="Maven: org.apache.tiles:tiles-api:2.2.2" />
+          <element id="library" level="project" name="Maven: org.apache.tiles:tiles-el:2.2.2" />
+          <element id="library" level="project" name="Maven: org.apache.tiles:tiles-core:2.2.2" />
+          <element id="library" level="project" name="Maven: javax.servlet:jstl:1.2" />
+          <element id="library" level="project" name="Maven: org.aspectj:aspectjrt:1.7.1" />
+          <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.7.1" />
+          <element id="library" level="project" name="Maven: log4j:log4j:1.2.17" />
+          <element id="library" level="project" name="Maven: org.jasypt:jasypt:1.7" />
+          <element id="library" level="project" name="Maven: commons-lang:commons-lang:2.3" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.6.4" />
+          <element id="library" level="project" name="Maven: org.slf4j:jcl-over-slf4j:1.6.4" />
+          <element id="library" level="project" name="Maven: org.slf4j:log4j-over-slf4j:1.6.4" />
+          <element id="library" level="project" name="Maven: ch.qos.logback:logback-classic:1.0.0" />
+          <element id="library" level="project" name="Maven: ch.qos.logback:logback-core:1.0.0" />
+          <element id="library" level="project" name="Maven: joda-time:joda-time:2.0" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="D:\Agung\ICON+\dreamap-copy\dreamap\dreamap-web\target/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="dreamap-web/web/Web" />
+    </root>
+  </artifact>
+</component>

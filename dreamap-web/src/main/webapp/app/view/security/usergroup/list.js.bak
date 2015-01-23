@@ -1,0 +1,45 @@
+/**
+ * Created by UwieSilent on 1/15/2015.
+ */
+Ext.define('app.view.security.usergroup.list' ,{
+    extend: 'Ext.window.Window',
+    alias: 'widget.userGroupList',
+    requires: ['Ext.window.Window'],
+    layout: 'fit',
+    autoShow: true,
+    title: 'User Group',
+    constrain: true,
+    tbar:[
+        '->'
+        ,{
+            text: 'Refresh',
+            iconCls: 'reload'
+        }],
+    items:[{
+        xtype: 'grid',
+        viewConfig: {
+            stripeRows: true,
+            enableTextSelection: true
+        },
+        columns:[{
+            text:'ID',
+            width: 100,
+            dataIndex: 'userGroupNo'
+        },{
+            text: 'User Group',
+            width: 300,
+            dataIndex: 'userGroupName'
+        },{
+            text: 'Description',
+            width :400,
+            dataIndex: 'userGroupDesc'
+        }],
+        bbar: {
+            xtype: 'pagingtoolbar',
+            id:'gridlistpager',
+            pageSize: 10,
+            displayInfo: true,
+            emptyMsg: "Daftar user group tidak tersedia !"
+        }
+    }]
+});
